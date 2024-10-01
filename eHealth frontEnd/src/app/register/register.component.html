@@ -1,0 +1,105 @@
+<div class="loginbody">
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form [formGroup]="signupForm">
+    <h3>Signup Here</h3>
+    <!-- {{ signupForm.value | json }} -->
+
+    <label>Name</label>
+    <input
+      formControlName="name"
+      type="text"
+      placeholder="Name"
+      name="name"
+      [class.is-invalid]="name?.invalid && name?.touched"
+    />
+    <div *ngIf="name?.invalid && name?.touched">
+      <small class="text-danger" *ngIf="name?.errors?.required"
+        >First Name is required</small
+      >
+      <small class="text-danger" *ngIf="name?.errors?.minlength"
+        >Minimum length 3 is required</small
+      >
+    </div>
+    <label>Email</label>
+    <input
+      formControlName="email"
+      type="text"
+      placeholder="Email"
+      name="email"
+      autocomplete="off"
+      [class.is-invalid]="errorMessage"
+    />
+    <div *ngIf="email?.invalid && email?.touched">
+      <small class="text-danger" *ngIf="email?.errors?.required"
+        >Email is required</small
+      >
+      <small class="text-danger" *ngIf="email?.errors?.pattern"
+        >Email should be of type example@domain.com</small
+      >
+    </div>
+    <div *ngIf="errorMessage">
+      <small class="text-danger">Email already exists</small>
+    </div>
+
+    <label>Password</label>
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Password"
+      name="password"
+      autocomplete="off"
+    />
+    <div *ngIf="pass?.invalid && pass?.touched">
+      <small class="text-danger" *ngIf="pass?.errors?.required"
+        >Password is required</small
+      >
+      <small class="text-danger" *ngIf="pass?.errors?.pattern"
+        >Pass should be at least 6 characters and include number and special
+        character</small
+      >
+    </div>
+    <label>Phone Number</label>
+    <input
+      formControlName="phno"
+      type="text"
+      placeholder="Phone Number"
+      name="phno"
+    />
+    <div *ngIf="phone?.invalid && phone?.touched">
+      <small class="text-danger" *ngIf="phone?.errors?.required"
+        >Phone number is required</small
+      >
+      <small class="text-danger" *ngIf="phone?.errors?.pattern"
+        >Enter correct phone number(10 digits)</small
+      >
+    </div>
+    <label>Address</label>
+    <!-- <input
+      formControlName="address"
+      type=""
+      placeholder="Address"
+      name="address"
+    /> -->
+    <textarea
+      placeholder="Address"
+      name="address"
+      formControlName="address"
+      class="form-control"
+    ></textarea>
+    <div *ngIf="phone?.invalid && phone?.touched">
+      <small class="text-danger" *ngIf="address?.errors?.required"
+        >Address is required</small
+      >
+    </div>
+
+    <button (click)="onSub()">Sign Up</button>
+    <div class="optn">
+      <!-- <div class="go"> pas</div> -->
+      <div class="signup" routerLink="/home">Home</div>
+      <div class="signup" routerLink="/login">Log In</div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,6 @@
+@eHealthTotalAPI_HostAddress = http://localhost:5290
+
+GET {{eHealthTotalAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

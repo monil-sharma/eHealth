@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hEavJNAUqP7aH+f7bgcqFbUJ3y3fRRtR0z7ajZ1wJ78=",
+  "Source": "eHealthTotalAPI",
+  "BasePath": "_content/eHealthTotalAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

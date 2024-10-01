@@ -1,0 +1,64 @@
+<!-- <div class="cart-container">
+    <h2>Shopping Cart</h2>
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+      <div *ngFor="let item of cartItems" class="cart-item">
+        <div>{{ item.productName }}</div>
+        <div>{{ item.productPrice | currency: 'INR'}}</div>
+        <div>
+          <input type="number" [(ngModel)]="item.quantity" (change)="updateQuantity(item)">
+        </div>
+        <div>
+          <button (click)="removeFromCart(item.id)">Remove</button>
+        </div>
+      </div>
+      <div class="cart-total">
+        Total: {{ getTotalPrice() | currency: 'INR' }}
+      </div>
+      <button [routerLink]="['/checkout']">Checkout</button>
+    </div>
+    <ng-template #emptyCart>
+      <p>Your cart is empty.</p>
+    </ng-template>
+  </div>
+   -->
+
+<app-header></app-header>
+
+<div class="container cart-container my-5">
+  <h2 class="text-center mb-4 pt-3">Shopping Cart</h2>
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div
+      *ngFor="let item of cartItems"
+      class="cart-item row align-items-center mb-3 p-2 border rounded"
+    >
+      <div class="col-md-4">{{ item.productName }}</div>
+      <div class="col-md-2">{{ item.productPrice | currency : "INR" }}</div>
+      <div class="col-md-2">
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="item.quantity"
+          (change)="updateQuantity(item)"
+        />
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-danger" (click)="removeFromCart(item.id)">
+          Remove
+        </button>
+      </div>
+    </div>
+    <div class="cart-total text-right mt-4">
+      <h4>Total: {{ getTotalPrice() | currency : "INR" }}</h4>
+    </div>
+    <div class="text-right">
+      <button class="btn btn-success" [routerLink]="['/checkout']">
+        Checkout
+      </button>
+    </div>
+  </div>
+  <ng-template #emptyCart>
+    <p class="text-center">Your cart is empty.</p>
+  </ng-template>
+</div>
+
+<app-footer></app-footer>

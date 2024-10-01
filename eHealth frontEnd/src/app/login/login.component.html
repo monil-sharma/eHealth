@@ -1,0 +1,33 @@
+<div class="loginbody">
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form [formGroup]="loginForm">
+    <h3>Login Here</h3>
+    <!-- {{ loginForm.value | json }} -->
+
+    <label>Username</label>
+    <input
+      formControlName="email"
+      type="text"
+      placeholder="Email"
+      name="email"
+    />
+
+    <label>Password</label>
+    <input
+      formControlName="password"
+      type="password"
+      placeholder="Password"
+      name="password"
+    />
+
+    <button (click)="onSub()">Log In</button>
+    <div class="optn">
+      <!-- <div class="go"> pas</div> -->
+      <div class="signup" routerLink="/home">Home</div>
+      <div class="signup" routerLink="/register">Sign Up</div>
+    </div>
+  </form>
+</div>

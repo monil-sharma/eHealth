@@ -1,0 +1,88 @@
+<!-- <div class="checkout-container">
+  <h2>Checkout</h2>
+
+  <div *ngIf="orders && orders.length > 0">
+    <div *ngFor="let order of orders" class="order-details">
+      <p><strong>Customer ID:</strong> {{ order.customerId }}</p>
+      <p><strong>Product ID:</strong> {{ order.productId }}</p>
+      <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+      <p><strong>Date:</strong> {{ order.date | date }}</p>
+      <p><strong>Amount:</strong> {{ order.amount | currency : 'INR'}}</p>
+    </div>
+  </div>
+
+  <div *ngIf="orders && orders.length === 0">
+    <p>No orders to display.</p>
+  </div>
+
+  <button (click)="placeOrder()">Place Order</button>
+</div> -->
+
+<app-header></app-header>
+
+<!-- <div class="container checkout-container my-5">
+  <h2 class="text-center mb-4 pt-3">Checkout</h2>
+
+  <div *ngIf="orders && orders.length > 0">
+    <div
+      *ngFor="let order of orders"
+      class="order-details border rounded p-3 mb-4"
+    >
+      <p><strong>Customer ID:</strong> {{ order.customerId }}</p> 
+
+      <p><strong>Product ID:</strong> {{ order.productId }}</p>
+      <p><strong>Product ID:</strong> {{ order.productName }}</p>
+
+      <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+
+      <p><strong>Date:</strong> {{ order.date | date }}</p>
+
+      <p><strong>Amount:</strong> {{ order.amount | currency : "INR" }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="orders && orders.length === 0" class="text-center">
+    <p>No orders to display.</p>
+  </div>
+
+  <div class="text-center mt-4">
+    <button class="btn btn-success" (click)="placeOrder()">Place Order</button>
+  </div>
+</div> -->
+
+<div class="container checkout-container my-5">
+  <h2 class="text-center mb-4 py-3">Checkout</h2>
+
+  <div *ngIf="orders && orders.length > 0">
+    <div
+      *ngFor="let order of orders"
+      class="order-details border rounded p-3 mb-4"
+    >
+      <!-- <p><strong>Customer ID:</strong> {{ order.customerId }}</p> -->
+
+      <!-- <p><strong>Product ID:</strong> {{ order.productId }}</p> -->
+      <p><strong>Product Name:</strong> {{ order.productName }}</p>
+      <p><strong>Product Category:</strong> {{ order.categoryName }}</p>
+
+      <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+
+      <p><strong>Date:</strong> {{ order.date | date }}</p>
+
+      <p><strong>Amount:</strong> {{ order.amount | currency : "INR" }}</p>
+    </div>
+  </div>
+
+  <div class="total-amount mt-4">
+    <p><strong>Total Amount:</strong> {{ totalAmount | currency : "INR" }}</p>
+  </div>
+
+  <div *ngIf="orders && orders.length === 0" class="text-center">
+    <p>No orders to display.</p>
+  </div>
+
+  <div class="text-center mt-4">
+    <button class="btn btn-success" (click)="placeOrder()">Place Order</button>
+  </div>
+</div>
+
+<app-footer></app-footer>
